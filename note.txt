@@ -1,0 +1,121 @@
+Starting Point
+--------------
+  routes
+    - web.php
+
+  resources/views
+    - welcome.blade.php
+
+localhost:8000 (default page)
+--------------/about (about page)
+--------------/contact (contact page)
+
+Blade Template Engine
+---------------------
+
+Home.php
+  - HTML (start)
+  - Nav
+  - Header (custom)
+  - Body (custom)
+  - Footer
+  - HTML (end)
+
+About.php
+  - HTML (start)
+  - Nav
+  - Header (custom)
+  - Body (custom)
+  - Footer
+  - HTML (end)
+
+Layout File (parent)
+  - HTML (start)
+  - Nav
+  - @yield (နေရာလွတ်)
+  - Footer
+  - HTML (end)
+
+Main File (child)
+  - @extends()
+  - @section()
+  - use (.) file path
+
+MVC
+----
+  - route
+  - controller (class)
+  - View (data show)
+
+CRUD Process
+------------
+  - Route
+    - resource
+      Route::resource('category', 'CategoryController');
+
+  - Controller
+    - resource
+      php artisan make:controller CategoryController -r
+
+  - Mehtods
+    - GET (4)
+    - POST, PUT, DELETE (1)
+
+  - UI
+    - create form (create.blade.php)
+    - edit form (edit.blade.php)
+    - display list (read) (index.blade.php)
+    - detail (read - optional)
+
+Database Migration
+------------------
+  - php artisan make:model Brand -m -r
+    (model, migration, resource controller)
+
+    - in model
+      protected $fillable = ['name', 'photo'];
+
+  - brand, category, subcategory,
+  - item
+
+    $table->string('codeno');
+    $table->string('name');
+    $table->text('photo'); 
+    $table->integer('price');
+    $table->integer('discount');
+    $table->text('description');
+    $table->unsignedBigInteger('brand_id'); 
+    $table->unsignedBigInteger('subcategory_id'); 
+
+  - order
+
+    $table->date('orderdate');
+    $table->string('voucherno');
+    $table->integer('total');
+    $table->text('note');
+    $table->integer('status');
+    $table->unsignedBigInteger('user_id');
+
+
+  - php artisan migrate:fresh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
