@@ -100,14 +100,34 @@ Database Migration
   - php artisan migrate:fresh
 
 
+Relationship
+------------
+  - One To One
 
+    - user
+      - id, name,
+        (1, Mg Mg)
+        (2, Su Su)
 
+    - phone
+      - id, phoneno, user_id
+      (1, 0987654, 1)
+      (1, 0923243, 2)
 
+    - user (id, name, email, password)
 
+    - userdetail (id, user_id, phoneno, address)
 
+  - One To Many
 
+    - post
+      - id, title
+      (1, Covid-19)
 
-
+    - comment
+      - id, content, post_id
+      (1, virus, 1)
+      (2, danger, 1)
 
 
 

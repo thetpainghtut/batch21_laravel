@@ -29,9 +29,14 @@ Route::get('/contact', 'PageController@contact')->name('contact');
 
 Route::get('/post', 'PageController@post')->name('post');
 
-// CRUD
+// CRUD Backend
 Route::resource('brand', 'BrandController'); // 7
 
 Route::resource('category', 'CategoryController'); // 7
 
 Route::resource('subcategory', 'SubcategoryController'); // 7
+
+// Frontend
+
+
+
