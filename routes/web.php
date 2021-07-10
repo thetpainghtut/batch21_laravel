@@ -40,3 +40,7 @@ Route::resource('subcategory', 'SubcategoryController'); // 7
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

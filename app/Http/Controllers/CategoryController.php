@@ -116,6 +116,7 @@ class CategoryController extends Controller
             $path = '/storage/'.$filePath;
 
             // Delete old photo (try yourself)
+            unlink(public_path().$category->photo);
         }else{
             $path = $category->photo;
         }
@@ -138,6 +139,12 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
+
+        // if ON DELETE (CASCADE)
+        foreach ($category->subcategories as $subcategory) {
+            $subcategory->delete();
+        }
+
         // redirect
         return redirect()->route('category.index');
     }

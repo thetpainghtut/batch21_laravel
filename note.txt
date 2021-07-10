@@ -129,7 +129,14 @@ Relationship
       (1, virus, 1)
       (2, danger, 1)
 
+Authentication
+--------------
+  - composer require laravel/ui:^2.4
+  - php artisan ui bootstrap --auth
 
+  => nodejs.org (download and install)
+    - npm install
+    - npm run dev
 
 
 
