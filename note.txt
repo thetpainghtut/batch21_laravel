@@ -131,6 +131,7 @@ Relationship
 
 Authentication
 --------------
+  - composer config platform.php 7.4.3 (version)
   - composer require laravel/ui:^2.4
   - php artisan ui bootstrap --auth
 
@@ -138,9 +139,29 @@ Authentication
     - npm install
     - npm run dev
 
+  => Using
+    - Register User (see in user table)
+    - Change Redirect Place in (HomeController/index)
+    - Filter Backend Route using middleware group
+    - Add User Logout Process (layouts/backendtemplate.blade.php)
 
+Frontend UI
+-----------
+  - Home 
+    - promotions and popular items (add to cart)
+    - Ads
+    - Categories
 
+  - Item Detail Page
+    - add to cart
+    - qty input box
+    
+  - Filter Pages
+    - Category, Brand, .....
+    - search box
 
+  - Cart Page
+  - Login / Register (design)
 
 
 

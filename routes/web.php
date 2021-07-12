@@ -17,29 +17,31 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/hello',function(){
-    return view('hello');
-});
+Route::get('/', 'PageController@home')->name('homepage');
 
-Route::get('/', 'PageController@home')->name('home');
+Route::get('/about', 'PageController@about')->name('aboutpage');
 
-Route::get('/about', 'PageController@about')->name('about');
+Route::get('/contact', 'PageController@contact')->name('contactpage');
 
-Route::get('/contact', 'PageController@contact')->name('contact');
-
-Route::get('/post', 'PageController@post')->name('post');
+Route::get('/product/{id}', 'PageController@post')->name('productpage');
 
 // CRUD Backend
-Route::resource('brand', 'BrandController'); // 7
+Route::middleware('auth')->group(function () {
+  Route::resource('brand', 'BrandController'); // 7
 
-Route::resource('category', 'CategoryController'); // 7
+  Route::resource('category', 'CategoryController'); // 7
 
-Route::resource('subcategory', 'SubcategoryController'); // 7
+  Route::resource('subcategory', 'SubcategoryController'); // 7
+
+  Route::resource('item', 'ItemController'); // 7
+
+  Route::resource('order', 'OrderController'); // 7
+});
 
 // Frontend
 
 
-
+// Authentication 
 
 Auth::routes();
 

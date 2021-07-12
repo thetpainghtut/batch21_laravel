@@ -23,6 +23,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        // return view('home');
+
+        // if admin -> backend
+        // if customer -> order tracking page
+        
+        return redirect()->route('category.index');
     }
 }
