@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>@yield('title')</title>
         <link rel="icon" type="image/x-icon" href="{{asset('template/assets/favicon.ico')}}" />
         <!-- Font Awesome icons (free version)-->
@@ -28,8 +29,8 @@
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('homepage')}}">Home</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('aboutpage')}}">About</a></li>
-                        {{-- <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('postpage')}}">Sample Post</a></li> --}}
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('contactpage')}}">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('cartpage')}}">Cart</a></li>
                     </ul>
                 </div>
             </div>
@@ -75,6 +76,9 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="{{asset('template/js/scripts.js')}}"></script>
+        {{-- Jquery --}}
+        <script src="{{asset('template/js/jquery.min.js')}}"></script>
+
         @yield('script')
     </body>
 </html>

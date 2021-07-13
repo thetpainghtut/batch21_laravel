@@ -10,4 +10,11 @@ class Order extends Model
     use SoftDeletes;
 
     protected $fillable = ['orderdate', 'voucherno', 'total',  'note', 'status', 'user_id'];
+
+    public function items($value='')
+    {
+        return $this->belongsToMany('App\Item')
+                    ->withPivot('qty')
+                    ->withTimestamps();
+    }
 }

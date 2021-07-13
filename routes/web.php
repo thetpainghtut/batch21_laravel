@@ -25,6 +25,9 @@ Route::get('/contact', 'PageController@contact')->name('contactpage');
 
 Route::get('/product/{id}', 'PageController@post')->name('productpage');
 
+Route::get('/cart', 'PageController@cart')->name('cartpage');
+
+
 // CRUD Backend
 Route::middleware('auth')->group(function () {
   Route::resource('brand', 'BrandController'); // 7
@@ -34,9 +37,9 @@ Route::middleware('auth')->group(function () {
   Route::resource('subcategory', 'SubcategoryController'); // 7
 
   Route::resource('item', 'ItemController'); // 7
-
-  Route::resource('order', 'OrderController'); // 7
 });
+
+Route::resource('order', 'OrderController'); // 7
 
 // Frontend
 

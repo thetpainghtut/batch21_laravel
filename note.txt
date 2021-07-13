@@ -163,6 +163,39 @@ Frontend UI
   - Cart Page
   - Login / Register (design)
 
+Order Process
+-------------
+
+Date: 13-07-2021            Voucherno:0099899584985
+Customer: ------            Sale: ------------
+----------------------------------------------------
+qty    Name      price         total
+----------------------------------------------------
+  2    Item One   2000        4000
+  1    Item Two   1500        1500
+----------------------------------------------------
+Total                         5500
+----------------------------------------------------
+
+
+Order Table (date, voucherno, customer, note, status)
+Item_Order (item_id, qty, order_id)
+
+Eg Pivot Table Name
+----------------
+item_order
+student_subject
+post_tag
+
+
+Review
+------
+  - rating count
+  - review text
+
+  - ratings(id, item_id, rcount, rtext, user_id)
+
+
 
 
 

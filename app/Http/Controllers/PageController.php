@@ -24,4 +24,8 @@ class PageController extends Controller
         $item = Item::find($id); // object
         return view('template.post',compact('item'));
     }
+
+    public function cart(){
+        return view('template.cart');
+    }
 }

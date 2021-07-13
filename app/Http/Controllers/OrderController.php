@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -35,7 +36,27 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::transaction(function () use ($request){
+            $cartArr = json_decode($request->data);
+            // return 'Success';
+
+            // insert orders
+            $order = new Order;
+            $order->orderdate = date('Y-m-d');
+            $order->voucherno = time();
+            $order->total = $request->total;
+            $order->note = '';
+            $order->user_id = 1;
+            $order->status = 0;
+            $order->save();
+
+            // insert item_order
+            foreach($cartArr as $item){
+                $order->items()->attach($item->id, ['qty' => $item->qty]);
+            }
+        });
+
+        return 'success';
     }
 
     /**
