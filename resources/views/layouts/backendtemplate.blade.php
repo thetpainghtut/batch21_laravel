@@ -20,6 +20,9 @@
 
   <!-- Custom styles for this page -->
   <link href="{{ asset('backend_assets/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+
+  {{-- Summernote --}}
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -62,7 +65,7 @@
           <i class="fas fa-fw fa-cog"></i>
           <span>Data Management</span>
         </a>
-        <div id="collapseData" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapseData" class="collapse {{Request::is('data-management/*') ? 'show': ''}}" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Custom Components:</h6>
             <a class="collapse-item" href="{{route('brand.index')}}">Brand</a>
@@ -79,7 +82,7 @@
           <i class="fas fa-fw fa-wrench"></i>
           <span>User Management</span>
         </a>
-        <div id="collapseUsers" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+        <div id="collapseUsers" class="collapse {{Request::is('user-management/*') ? 'show': ''}}" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Custom Utilities:</h6>
             <a class="collapse-item" href="utilities-color.html">Colors</a>
@@ -104,10 +107,10 @@
           <i class="fas fa-fw fa-wrench"></i>
           <span>Order Management</span>
         </a>
-        <div id="collapseOrders" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+        <div id="collapseOrders" class="collapse {{Request::is('order-management/*') ? 'show': ''}}" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="utilities-color.html">Colors</a>
+            <a class="collapse-item" href="{{route('order.index')}}">Orders</a>
             <a class="collapse-item" href="utilities-border.html">Borders</a>
             <a class="collapse-item" href="utilities-animation.html">Animations</a>
             <a class="collapse-item" href="utilities-other.html">Other</a>

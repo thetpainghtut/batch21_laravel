@@ -34,7 +34,7 @@
             <label for="inputPhoto" class="col-sm-2 col-form-label">Photo</label>
             <div class="col-sm-10">
               <input type="file" name="photo" class="form-control-file" id="inputPhoto">
-              <img src="{{$category->photo}}" alt="photo" class="w-25">
+              <img src="{{asset("storage/$category->photo")}}" alt="photo" class="w-25">
             </div>
           </div>
           <div class="row mb-3">

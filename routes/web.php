@@ -29,19 +29,35 @@ Route::get('/cart', 'PageController@cart')->name('cartpage');
 
 
 // CRUD Backend
-Route::middleware('auth')->group(function () {
-  Route::resource('brand', 'BrandController'); // 7
 
-  Route::resource('category', 'CategoryController'); // 7
+Route::prefix('data-management')->middleware('auth')->group(function () {
+  Route::resource('brand', 'BrandController');
 
-  Route::resource('subcategory', 'SubcategoryController'); // 7
+  Route::resource('category', 'CategoryController');
 
-  Route::resource('item', 'ItemController'); // 7
+  Route::resource('subcategory', 'SubcategoryController');
+
+  Route::resource('item', 'ItemController');
 });
 
-Route::resource('order', 'OrderController'); // 7
+Route::prefix('order-management')->group(function () {
+  Route::resource('order', 'OrderController');
+});
+
+Route::prefix('user-management')->group(function () {
+  Route::resource('customer', 'CustomerController');
+});
+
+
 
 // Frontend
+
+Route::prefix('frontend')->group(function () {
+  Route::get('home', 'FrontendController@home')->name('frontend.home');
+  Route::get('shop', 'FrontendController@shop')->name('frontend.shop');
+  Route::get('cart', 'FrontendController@cart')->name('frontend.cart');
+});
+
 
 
 // Authentication 

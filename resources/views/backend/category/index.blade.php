@@ -39,7 +39,7 @@
                 <td>{{$i++}}</td>
                 <td>
                   {{$category->name}}
-                  <img src="{{asset($category->photo)}}" alt="Photo" class="w-25">
+                  <img src="{{asset("storage/$category->photo")}}" alt="Photo" class="w-25">
                 </td>
                 <td>{{count($category->subcategories)}}</td>
                 <td>

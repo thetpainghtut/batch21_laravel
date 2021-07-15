@@ -196,6 +196,12 @@ Review
   - ratings(id, item_id, rcount, rtext, user_id)
 
 
+Seeding
+-------
+  - php artisan make:factory CategoryFactory --model=Category
+  - php artisan make:seeder CategorySeeder
+    - factory(Category::class, 2)->create();
+  - php artisan db:seed --class=CategorySeeder
 
 
 

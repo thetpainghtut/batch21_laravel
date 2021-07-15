@@ -19,7 +19,7 @@ class CreateItemsTable extends Migration
             $table->string('name');
             $table->text('photo'); 
             $table->integer('price');
-            $table->integer('discount');
+            $table->integer('discount')->default(0);
             $table->text('description');
             $table->unsignedBigInteger('brand_id'); 
             $table->unsignedBigInteger('subcategory_id'); 

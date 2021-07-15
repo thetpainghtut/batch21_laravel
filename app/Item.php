@@ -18,7 +18,7 @@ class Item extends Model
 
     public function subcategory()
     {
-        return $this->belongsTo('App\Subategory');
+        return $this->belongsTo('App\Subcategory');
     }
 
     public function orders($value='')

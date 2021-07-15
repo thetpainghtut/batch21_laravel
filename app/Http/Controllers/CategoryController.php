@@ -52,14 +52,12 @@ class CategoryController extends Controller
 
             // categoryimg/624872374523_a.jpg
             $filePath = $request->file('photo')->storeAs('categoryimg', $fileName, 'public');
-
-            $path = '/storage/'.$filePath;
         }
 
         // data insert
         $category = new Category; // create new object
         $category->name = $request->name;
-        $category->photo = $path;
+        $category->photo = $filePath;
         $category->save();
 
         // redirect
@@ -113,17 +111,15 @@ class CategoryController extends Controller
             // categoryimg/624872374523_a.jpg
             $filePath = $request->file('photo')->storeAs('categoryimg', $fileName, 'public');
 
-            $path = '/storage/'.$filePath;
-
             // Delete old photo (try yourself)
-            unlink(public_path().$category->photo);
+            unlink(public_path('storage/').$category->photo);
         }else{
-            $path = $category->photo;
+            $filePath = $category->photo;
         }
 
         // data update
         $category->name = $request->name;
-        $category->photo = $path;
+        $category->photo = $filePath;
         $category->save();
 
         // redirect
