@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -26,8 +27,14 @@ class HomeController extends Controller
         // return view('home');
 
         // if admin -> backend
+        $roles = Auth::user()->getRoleNames(); // Returns a collection
+        
+        if ($roles[0] == 'admin') {
+            return redirect()->route('category.index');
+        }else{
+            return redirect()->route('homepage');
+        }
         // if customer -> order tracking page
         
-        return redirect()->route('category.index');
     }
 }

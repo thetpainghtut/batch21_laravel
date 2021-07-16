@@ -204,5 +204,14 @@ Seeding
   - php artisan db:seed --class=CategorySeeder
 
 
-
+Spatie Laravel Permission
+  -  composer require spatie/laravel-permission
+  - Docs (4,5,7,8)
+  - Create Seeder (RoleSeeder)
+  - Run Seeder (php artisan db:seed --class=RoleSeeder)
+  - Add HasRoles into User Model (User.php)
+  - Http/Controllers/Auth/RegisterController -> create (admin, customer)
+  - Show phpmyadmin => users, model_has_role
+  - Hppp/Controllers/HomeController -> index
+  
 

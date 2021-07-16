@@ -31,6 +31,28 @@
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('aboutpage')}}">About</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('contactpage')}}">Contact</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('cartpage')}}">Cart</a></li>
+                        @guest
+                            <li class="nav-item">
+                                <a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                             <li class="nav-item dropdown">
+                                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                    {{Auth::user()->name}}
+                                  </a>
+
+                                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                                    <li><a class="dropdown-item" href="#">Orders</a></li>
+                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a></li>
+                                  </ul>
+                             </li>
+                        @endguest
                     </ul>
                 </div>
             </div>
@@ -82,3 +104,26 @@
         @yield('script')
     </body>
 </html>
+
+<!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+          @csrf
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            {{-- <a class="btn btn-primary" href="login.html">Logout</a> --}}
+            <input type="submit" class="btn btn-primary" name="btnlogout" value="Logout">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

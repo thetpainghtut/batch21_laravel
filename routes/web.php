@@ -30,7 +30,7 @@ Route::get('/cart', 'PageController@cart')->name('cartpage');
 
 // CRUD Backend
 
-Route::prefix('data-management')->middleware('auth')->group(function () {
+Route::prefix('data-management')->middleware('auth','role:admin')->group(function () {
   Route::resource('brand', 'BrandController');
 
   Route::resource('category', 'CategoryController');
