@@ -215,3 +215,41 @@ Spatie Laravel Permission
   - Hppp/Controllers/HomeController -> index
   
 
+API (Application Programming Interface)
+----
+  - Office Application
+    - Mobile Application (staff) (java)  => Customer Shopping
+    - Windows App (hr) (.Net) 
+    - Web App (CEO) (PHP) => Shop
+
+    - Backend API (laravel) (JSON)
+
+    - DB
+
+
+
+Shop App Schedule
+-----------------
+- Home Page Design (3)
+- Detail Page Design (1)
+- Add To Cart Process (2)
+- Backend UI 
+- Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

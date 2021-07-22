@@ -43,7 +43,7 @@ class SubcategoryController extends Controller
 
         // validation
         $request->validate([
-            "name" => "required|unique:categories|max:191|min:5",
+            "name" => "required|unique:subcategories|max:191|min:5",
             // filter only category table id validation rule (try yourself)
             "category" => "required"
         ]);

@@ -13,20 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-Route::get('/', 'PageController@home')->name('homepage');
-
-Route::get('/about', 'PageController@about')->name('aboutpage');
-
-Route::get('/contact', 'PageController@contact')->name('contactpage');
-
-Route::get('/product/{id}', 'PageController@post')->name('productpage');
-
-Route::get('/cart', 'PageController@cart')->name('cartpage');
-
+Route::get('/', function () {
+    return redirect()->route('frontend.home');
+});
 
 // CRUD Backend
 
@@ -49,7 +38,6 @@ Route::prefix('user-management')->group(function () {
 });
 
 
-
 // Frontend
 
 Route::prefix('frontend')->group(function () {
@@ -57,7 +45,6 @@ Route::prefix('frontend')->group(function () {
   Route::get('shop', 'FrontendController@shop')->name('frontend.shop');
   Route::get('cart', 'FrontendController@cart')->name('frontend.cart');
 });
-
 
 
 // Authentication 

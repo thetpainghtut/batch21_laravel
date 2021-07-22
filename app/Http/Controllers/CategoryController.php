@@ -41,7 +41,7 @@ class CategoryController extends Controller
 
         // validation
         $request->validate([
-            "name" => "required|unique:categories|max:191|min:5",
+            "name" => "required|unique:categories|max:191|min:3",
             "photo" => "required|mimes:jpeg,jpg,png"
         ]);
 
@@ -99,7 +99,7 @@ class CategoryController extends Controller
 
         // validation
         $request->validate([
-            "name" => "required|max:191|min:5",
+            "name" => "required|max:191|min:3",
             "photo" => "sometimes|mimes:jpeg,jpg,png"
         ]);
 

@@ -5,9 +5,15 @@ namespace App\Http\Controllers;
 use App\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Auth;
 
 class OrderController extends Controller
 {
+    public function __construct($value='')
+    {
+        $this->middleware('auth:customer')->only('store');
+        $this->middleware('auth:admin')->except('store');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -47,7 +53,7 @@ class OrderController extends Controller
             $order->voucherno = time();
             $order->total = $request->total;
             $order->note = '';
-            $order->user_id = 1;
+            $order->user_id = Auth::id();
             $order->status = 0;
             $order->save();
 
