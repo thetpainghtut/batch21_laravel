@@ -15,6 +15,11 @@ class Category extends Model
         return $this->hasMany('App\Subcategory');
     }
 
+    public function filterSubcategories($value='')
+    {
+        return $this->hasMany('App\Subcategory')->where('name', 'like', '%lo%');
+    }
+
     public function items()
     {
         return $this->hasManyThrough('App\Item','App\Subcategory');

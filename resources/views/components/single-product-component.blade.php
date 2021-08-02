@@ -10,12 +10,12 @@
     </a>
     <div class="button-head">
       <div class="product-action">
-        <a class="QuickView" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+        <a class="QuickView" title="Quick View" href="#" data-id="{{$item->id}}"><i class=" ti-eye"></i><span>Quick Shop</span></a>
         <a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
         <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
       </div>
       <div class="product-action-2">
-        <a title="Add to cart" href="#">Add To Cart</a>
+        <a title="Add to cart" href="#" class="addToCart" data-id={{$item->id}}>Add To Cart</a>
       </div>
     </div>
   </div>

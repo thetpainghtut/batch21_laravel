@@ -26,4 +26,16 @@ class FrontendController extends Controller
     {
         return view('frontend.cart');
     }
+
+    public function quickItem(Item $item)
+    {
+        return $item;
+    }
+
+    public function testing($value='')
+    {
+        $categories = Category::with('filterSubcategories')->get();
+        // dd($categories);
+        return view('frontend.testing',compact('categories'));
+    }
 }

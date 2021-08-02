@@ -44,6 +44,8 @@ Route::prefix('frontend')->group(function () {
   Route::get('home', 'FrontendController@home')->name('frontend.home');
   Route::get('shop', 'FrontendController@shop')->name('frontend.shop');
   Route::get('cart', 'FrontendController@cart')->name('frontend.cart');
+  Route::get('quickItem/{item}', 'FrontendController@quickItem')->name('quickItem');
+  Route::get('testing', 'FrontendController@testing')->name('frontend.testing');
 });
 
 

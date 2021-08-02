@@ -117,12 +117,7 @@
             <div class="col-lg-8 col-md-7 col-12">
               <div class="search-bar-top">
                 <div class="search-bar">
-                  <select>
-                    <option selected="selected">All Category</option>
-                    <option>watch</option>
-                    <option>mobile</option>
-                    <option>kid’s item</option>
-                  </select>
+                  <x-category-dropdown></x-category-dropdown>
                   <form>
                     <input name="search" placeholder="Search Products Here....." type="search">
                     <button class="btnn"><i class="ti-search"></i></button>
@@ -277,8 +272,6 @@
   </section>
   <!-- End Shop Newsletter -->
   
-  
-  
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
@@ -293,16 +286,16 @@
             <div class="product-gallery">
               <div class="quickview-slider-active">
                 <div class="single-slider">
-                  <img src="images/modal1.jpg" alt="#">
+                  <img src="/storage/itemimg/U2TBiCRU801zbmoCzAUoVX35Xlp5L7wn4dkzu4qY.png" alt="#">
                 </div>
                 <div class="single-slider">
-                  <img src="images/modal2.jpg" alt="#">
+                  <img src="/storage/itemimg/U2TBiCRU801zbmoCzAUoVX35Xlp5L7wn4dkzu4qY.png" alt="#">
                 </div>
                 <div class="single-slider">
-                  <img src="images/modal3.jpg" alt="#">
+                  <img src="/storage/itemimg/U2TBiCRU801zbmoCzAUoVX35Xlp5L7wn4dkzu4qY.png" alt="#">
                 </div>
                 <div class="single-slider">
-                  <img src="images/modal4.jpg" alt="#">
+                  <img src="/storage/itemimg/U2TBiCRU801zbmoCzAUoVX35Xlp5L7wn4dkzu4qY.png" alt="#">
                 </div>
               </div>
             </div>
@@ -352,7 +345,7 @@
                 </div>
               </div>
             </div>
-                              <div class="quantity">
+            <div class="quantity">
               <!-- Input Order -->
               <div class="input-group">
                 <div class="button minus">
@@ -370,7 +363,7 @@
               <!--/ End Input Order -->
             </div>
             <div class="add-to-cart">
-              <a href="#" class="btn">Add to cart</a>
+              <a href="#" class="btn addToCart">Add to cart</a>
               <a href="#" class="btn min"><i class="ti-heart"></i></a>
               <a href="#" class="btn min"><i class="fa fa-compress"></i></a>
             </div>

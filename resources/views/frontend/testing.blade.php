@@ -6,10 +6,23 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
+          {{$categories}}
+          {{-- @foreach($categories as $category)
+            <h4>Category : {{$category->name}}</h4>
+            @if(count($category->filterSubcategories) > 0)
+              @foreach($category->filterSubcategories as $subcategory) 
+                <h6>Subcategory: {{$subcategory->name}}</h6>
+              @endforeach
+            @endif
+          @endforeach --}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
           <div class="bread-inner">
             <ul class="bread-list">
               <li><a href="index1.html">Home<i class="ti-arrow-right"></i></a></li>
-              <li class="active"><a href="blog-single.html">Cart</a></li>
+              <li class="active"><a href="blog-single.html">Testing</a></li>
             </ul>
           </div>
         </div>

@@ -294,7 +294,7 @@
   <!-- End Most Popular Area -->
   
   <!-- Start Shop Home List  -->
-  <section class="shop-home-list section">
+  {{-- <section class="shop-home-list section">
     <div class="container">
       <div class="row">
         <div class="col-lg-4 col-md-6 col-12">
@@ -488,7 +488,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
   <!-- End Shop Home List  -->
   
   <!-- Start Cowndown Area -->
@@ -522,11 +522,47 @@
 @endsection
 
 @section('script')
+  <script type="text/javascript" src="{{asset('frontend/js/custom.js')}}"></script>
+  
   <script type="text/javascript">
     $(document).ready(function(){
       $('.QuickView').click(function(e){
         e.preventDefault();
-        $('#exampleModal').modal('show')
+        item_id = $(this).data('id');
+
+        routeName = "{{route('quickItem',':id')}}";
+        url = routeName.replace(":id",item_id);
+
+        $.get(url,function (res) {
+          // console.log(res.id);
+          item = res;
+          // html = `<div class="single-slider">
+          //         <img src="/storage/${res.photo}" alt="#">
+          //       </div>
+          //       <div class="single-slider">
+          //         <img src="/storage/${res.photo}" alt="#">
+          //       </div>
+          //       <div class="single-slider">
+          //         <img src="/storage/${res.photo}" alt="#">
+          //       </div>
+          //       <div class="single-slider">
+          //         <img src="/storage/${res.photo}" alt="#">
+          //       </div>`;
+          // $('.quickview-slider-active').html(html);
+
+          $('.quickview-content').find('h2').html(item.name)
+
+          $('.quickview-content').find('h3').html(`${thousands_separators(item.price)} Ks`)
+
+          $('.quickview-peragraph').html(item.description)
+
+          $('.quantity').find('input').val(1)
+
+          $('.add-to-cart').find('.addToCart').attr('data-id',item.id)
+
+          $('#exampleModal').modal('show');
+        })
+
       })
     })
   </script>
